@@ -29,10 +29,9 @@ export default class AuthController extends Component<P, S> {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      // if (userInfo) {
-      // this.props.navigation?.navigate('Splash');
-      // let firestoreUser = await addUser(userInfo);
-      // }
+      if (userInfo) {
+        this.props.navigation?.navigate('Splash');
+      }
       console.log('userInfo', userInfo);
     } catch (error: any) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
