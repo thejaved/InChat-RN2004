@@ -9,9 +9,9 @@ export default class Main extends MainController {
   render() {
     return (
       <>
-        <ScreenContainer>
+        <ScreenContainer translucent={false}>
           <SafeAreaView style={styles.container}>
-            <AppHeader title="Auth" />
+            <AppHeader title="Main" />
             <View>
               <Text>Main Screen</Text>
             </View>

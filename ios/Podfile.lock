@@ -1234,6 +1234,8 @@ PODS:
     - React-logger (= 0.73.1)
     - React-perflogger (= 0.73.1)
   - RecaptchaInterop (100.0.0)
+  - RNCAsyncStorage (1.21.0):
+    - React-Core
   - RNCMaskedView (0.3.1):
     - React-Core
   - RNFBApp (18.7.3):
@@ -1339,6 +1341,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
@@ -1478,6 +1481,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCMaskedView:
     :path: "../node_modules/@react-native-masked-view/masked-view"
   RNFBApp:
@@ -1572,6 +1577,7 @@ SPEC CHECKSUMS:
   React-utils: debda2c206770ee2785bdebb7f16d8db9f18838a
   ReactCommon: ddb128564dcbfa0287d3d1a2d10f8c7457c971f6
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  RNCAsyncStorage: 618d03a5f52fbccb3d7010076bc54712844c18ef
   RNCMaskedView: 090213d32d8b3bb83a4dcb7d12c18f0152591906
   RNFBApp: c21258de1485419a845efbba9c09ec946c89891d
   RNFBAuth: 079bb1bc37a912a277aedf366fe5bf4632b069c9
@@ -1582,6 +1588,6 @@ SPEC CHECKSUMS:
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 2b33a7ac96c58cdaa7b810948fc6a2a76ed2d108
 
-PODFILE CHECKSUM: ff18adf4c5c415c9b60af4bf08290d2f79e14780
+PODFILE CHECKSUM: 19e3e2d770625abab83e27a9bdcab6940fa880c3
 
 COCOAPODS: 1.14.3

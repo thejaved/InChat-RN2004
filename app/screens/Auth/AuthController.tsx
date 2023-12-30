@@ -25,27 +25,25 @@ export default class AuthController extends Component<P, S> {
     });
   }
 
-  async onGoogleButtonPress() {
+  onGoogleButtonPress = async () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
+      // if (userInfo) {
+      // this.props.navigation?.navigate('Splash');
+      // let firestoreUser = await addUser(userInfo);
+      // }
       console.log('userInfo', userInfo);
     } catch (error: any) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        // user cancelled the login flow
-        console.log('1');
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        // operation (e.g. sign in) is in progress already
-        console.log('2');
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        // play services not available or outdated
         console.log('error', error);
-        console.log('3');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log('error', error);
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log('error', error);
       } else {
-        // some other error happened
-        console.log('4');
         console.log('error', error);
       }
     }
-  }
+  };
 }
