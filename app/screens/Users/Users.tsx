@@ -28,7 +28,7 @@ export default class Users extends UsersController {
           <Text style={styles.labelEmail}>{item.email}</Text>
         </View>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => this.handleChat(item)}>
         <Fontisto
           name="hipchat"
           size={responsiveFontSize(3)}

@@ -48,4 +48,5 @@ export default class UsersController extends Component<P, S> {
   };
 
   handleGoBack = () => this.props.navigation?.goBack();
+  handleChat = (item: any) => this.props.navigation?.navigate('Chat', {item});
 }

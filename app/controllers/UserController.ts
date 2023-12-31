@@ -26,7 +26,6 @@ const addUser = async (user: User) => {
   try {
     const {email} = user.user;
 
-    // Check if the user already exists
     const userExists = await isUserExists(email);
 
     if (userExists) {
@@ -64,7 +63,7 @@ const addNewUser = async (user: User) => {
     name,
     email,
     photo,
-    posts: [],
+    chatRooms: [],
     isVerified: true,
     bio: `Hi 👋, I am ${name}`,
   });
@@ -75,4 +74,15 @@ const addNewUser = async (user: User) => {
   return newUser;
 };
 
-export {addUser, getUsers};
+const addChatRoomToUser = async (userId: string, chatRoomId: string) => {
+  try {
+    const userRef = firestore().collection('users').doc(userId);
+    await userRef.update({
+      chatRooms: firestore.FieldValue.arrayUnion(chatRoomId),
+    });
+  } catch (error) {
+    console.error('Error adding chat room to user:', error);
+  }
+};
+
+export {addUser, getUsers, addChatRoomToUser};
