@@ -1,4 +1,4 @@
-import {Main, Profile} from '../screens';
+import {Main, Profile, Users} from '../screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   responsiveFontSize,

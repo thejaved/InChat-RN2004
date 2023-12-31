@@ -12,4 +12,6 @@ export default class MainController extends Component<P, S> {
     super(props);
     this.state = {};
   }
+
+  addUserToChat = () => this.props.navigation?.navigate('Users');
 }

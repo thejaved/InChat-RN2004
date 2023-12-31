@@ -12,6 +12,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Text, StyleSheet, SafeAreaView, View} from 'react-native';
 import {bgImage} from '../../assets/images';
 import {ScreenContainer} from '../../components';
+import {Image} from 'react-native';
 
 export default class Profile extends ProfileController {
   render() {
@@ -20,11 +21,18 @@ export default class Profile extends ProfileController {
         <ScreenContainer>
           <ImageBackground style={styles.bgContainer} source={bgImage}>
             <View style={styles.profileContainer}>
-              <AntDesign
-                name="user"
-                size={responsiveFontSize(6)}
-                color={colors.black}
-              />
+              {this.state.photo ? (
+                <Image
+                  source={{uri: this.state.photo}}
+                  style={{width: '100%', height: '100%'}}
+                />
+              ) : (
+                <AntDesign
+                  name="user"
+                  size={responsiveFontSize(6)}
+                  color={colors.black}
+                />
+              )}
             </View>
           </ImageBackground>
           <View style={styles.contentContainer}>
@@ -35,8 +43,8 @@ export default class Profile extends ProfileController {
                 size={responsiveFontSize(2)}
               />
             </TouchableOpacity>
-            <Text style={styles.lableName}>userName</Text>
-            <Text style={styles.lableDes}>bio</Text>
+            <Text style={styles.lableName}>{this.state.name}</Text>
+            <Text style={styles.lableDes}>{this.state.bio}</Text>
           </View>
         </ScreenContainer>
       </>
@@ -74,6 +82,7 @@ const styles = StyleSheet.create({
     borderColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
   },
   contentContainer: {
     width: '100%',
@@ -111,5 +120,6 @@ const styles = StyleSheet.create({
   lableDes: {
     color: colors.black,
     fontFamily: fonts.MulishRegular,
+    marginTop: responsiveWidth(1),
   },
 });

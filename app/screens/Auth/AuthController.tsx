@@ -1,10 +1,11 @@
 import {Component} from 'react';
-import auth from '@react-native-firebase/auth';
-import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
+import {addUser} from '../../controllers/UserController';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
 
 interface P {
   navigation?: NavigationProp<ParamListBase>;
@@ -29,10 +30,11 @@ export default class AuthController extends Component<P, S> {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      if (userInfo) {
+      let user = await addUser(userInfo);
+      if (user) {
+        await AsyncStorage.setItem('AUTHID', user.id);
         this.props.navigation?.navigate('Splash');
       }
-      console.log('userInfo', userInfo);
     } catch (error: any) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log('error', error);

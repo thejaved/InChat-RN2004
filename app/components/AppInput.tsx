@@ -40,18 +40,16 @@ export default AppInput;
 const styles = StyleSheet.create({
   inputContianer: {
     width: '100%',
+    borderBottomWidth: 2,
+    borderColor: colors.primary,
     height: responsiveHeight(6),
+    backgroundColor: colors.white,
   },
   input: {
     width: '100%',
     height: '100%',
-    borderBottomWidth: 2,
-    borderColor: colors.primary,
-    backgroundColor: colors.white,
     fontFamily: fonts.MulishRegular,
     color: colors.black,
     paddingHorizontal: responsiveWidth(2),
-    borderTopLeftRadius: responsiveWidth(2),
-    borderTopRightRadius: responsiveWidth(2),
   },
 });

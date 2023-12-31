@@ -1,6 +1,6 @@
-import {Auth, Main, Splash} from '../screens';
-import {createStackNavigator} from '@react-navigation/stack';
 import MyTabs from './MyTabs';
+import {Auth, Splash, Users} from '../screens';
+import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
@@ -9,6 +9,7 @@ function AppStack() {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Auth" component={Auth} />
+      <Stack.Screen name="Users" component={Users} />
       <Stack.Screen name="MyTabs" component={MyTabs} />
     </Stack.Navigator>
   );

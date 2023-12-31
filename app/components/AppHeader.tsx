@@ -7,6 +7,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  GestureResponderEvent,
 } from 'react-native';
 import {
   responsiveFontSize,
@@ -16,20 +17,23 @@ import {
 
 interface AppHeaderProps {
   title: string;
+  leftPress?: ((event: GestureResponderEvent) => void) | undefined;
 }
 
-const AppHeader: React.FC<AppHeaderProps> = ({title}) => {
+const AppHeader: React.FC<AppHeaderProps> = ({title, leftPress}) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.header}>
         <View style={styles.leftIconContainer}>
-          <TouchableOpacity>
-            <AntDesign
-              name="arrowleft"
-              size={responsiveFontSize(3)}
-              color={colors.white}
-            />
-          </TouchableOpacity>
+          {leftPress && (
+            <TouchableOpacity onPress={leftPress}>
+              <AntDesign
+                name="arrowleft"
+                size={responsiveFontSize(3)}
+                color={colors.white}
+              />
+            </TouchableOpacity>
+          )}
           <Text style={styles.title}>{title}</Text>
         </View>
       </View>

@@ -1,6 +1,6 @@
 import {Component} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 interface P {
   navigation?: NavigationProp<ParamListBase>;
@@ -22,13 +22,10 @@ export default class SplashController extends Component<P, S> {
   }
 
   handleAuth = async () => {
-    const currentUser = await GoogleSignin.getCurrentUser();
-
-    console.log('currentUser', currentUser);
+    const AUTHID = await AsyncStorage.getItem('AUTHID');
     setTimeout(() => {
-      if (currentUser) this.props.navigation?.navigate('MyTabs');
+      if (AUTHID) this.props.navigation?.navigate('MyTabs');
       else this.props.navigation?.navigate('Auth');
-      // this.props.navigation?.navigate('Auth');
     }, 500);
   };
 }
