@@ -2,7 +2,7 @@ import firestore from '@react-native-firebase/firestore';
 import {User} from '@react-native-google-signin/google-signin';
 import {isUserExists} from './AuthController';
 
-const getUsers = async (currentUserEmail: string) => {
+const getUsers = async (currentUserId: string) => {
   try {
     const usersCollection = firestore().collection('users');
     const querySnapshot = await usersCollection.get();
@@ -13,7 +13,7 @@ const getUsers = async (currentUserEmail: string) => {
 
     const usersData = querySnapshot.docs
       .map(userDoc => ({id: userDoc.id, ...userDoc.data()}))
-      .filter((user: any) => user.email !== currentUserEmail);
+      .filter((user: any) => user.id !== currentUserId);
 
     return usersData;
   } catch (error) {

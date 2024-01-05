@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   messageText: {
     fontFamily: fonts.MulishSemiBold,
-    fontSize: responsiveFontSize(1.5),
+    fontSize: responsiveFontSize(1.8),
     color: colors.white,
   },
   sendInutContainer: {

@@ -34,15 +34,25 @@ const deleteMessage = async (roomId: string, messageId: string) => {
 
 const createChatRoom = async (user1Id: string, user2Id: string) => {
   try {
-    // Check if a chat room already exists between the two users
-    const existingRoomQuery = await firestore()
+    const existingRoomQuery1 = await firestore()
       .collection('rooms')
-      .where('users', '==', [user1Id, user2Id])
+      .where('users', 'array-contains', user1Id)
       .get();
 
-    if (!existingRoomQuery.empty) {
+    // Check if a chat room already exists between the two users (user2Id, user1Id order)
+    const existingRoomQuery2 = await firestore()
+      .collection('rooms')
+      .where('users', 'array-contains', user2Id)
+      .get();
+
+    // Combine results from both queries
+    const existingRoomQuery = existingRoomQuery1.docs.concat(
+      existingRoomQuery2.docs,
+    );
+
+    if (existingRoomQuery.length > 0) {
       // If a room already exists, return its ID
-      const existingRoom = existingRoomQuery.docs[0];
+      const existingRoom = existingRoomQuery[0];
       return existingRoom.id;
     }
 

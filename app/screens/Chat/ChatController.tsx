@@ -64,7 +64,6 @@ export default class ChatController extends Component<P, S> {
       if (chatRoomId) {
         let messages = await getMessagesByRoomId(chatRoomId);
         this.setState({messages});
-        console.log('messages', messages);
       }
     }
   };
