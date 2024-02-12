@@ -1,44 +1,26 @@
 {
   "project_info": {
-    "project_number": "146914449350",
-    "project_id": "inchat-13ec0",
-    "storage_bucket": "inchat-13ec0.appspot.com"
+    "project_number": "934769570776",
+    "project_id": "inchat-a7bee",
+    "storage_bucket": "inchat-a7bee.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:146914449350:android:a175d60f4095ad797584c7",
+        "mobilesdk_app_id": "1:934769570776:android:a03a66c9c485c0708138ad",
         "android_client_info": {
           "package_name": "com.inchat"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "146914449350-rns7ko421b3dknqrr4k3een71kdg2017.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.inchat",
-            "certificate_hash": "f8d81a0bbc070d5e0127c5a7e2d98ab907c1d066"
-          }
-        },
-        {
-          "client_id": "146914449350-2nhj6jofare2i7oqct0iiioaj11i1aao.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDum2LDRtDpLg2m6fR1LstHGPPQDz8cz2c"
+          "current_key": "AIzaSyAzMP74eEsr4MPgjZuLMllVUCMm_BCoKTM"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "146914449350-2nhj6jofare2i7oqct0iiioaj11i1aao.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

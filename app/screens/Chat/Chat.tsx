@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: colors.white,
     flexDirection: 'row',
+    color: colors.black,
   },
   sendInut: {
     flex: 1,
